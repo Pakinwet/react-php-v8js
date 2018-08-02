@@ -6,14 +6,15 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  */
-var Table = React.createClass({
-  render: function () {
-    var rows = this.props.data.map(function (row) {
-      var cells = row.map(function(cell) {
-        return <td>{cell}</td>;
+ 
+class Table extends React.Component {
+  render() {
+    var rows = this.props.data.map(function (row,rowID) {
+      var cells = row.map(function(cell,cellID) {
+        return <td key={cellID}>{cell}</td>;
       });
 
-      return <tr>{cells}</tr>;
+      return <tr key={rowID}>{cells}</tr>;
     });
 
     return (
@@ -22,4 +23,4 @@ var Table = React.createClass({
       </table>
     );
   }
-});
+}

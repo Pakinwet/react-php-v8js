@@ -15,7 +15,7 @@ include '../ReactJS.php';
 
 $rjs = new ReactJS(
   // location of React's code
-  file_get_contents('build/react-bundle.js'),
+  file_get_contents('build/react-bundle.min.js'),
   // app code
   file_get_contents('build/table.js')
 );
@@ -47,7 +47,7 @@ $rjs->setComponent('Table', $data);
     <div id="page"><?php echo $rjs->getMarkup(); ?></div>
 
     <!-- load react and app code -->
-    <script src="react/build/react.min.js"></script>
+    <script src="build/react-bundle.min.js"></script>
     <script src="build/table.js"></script>
 
     <script>
